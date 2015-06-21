@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Overview</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        #app input { margin-bottom: 2em; }
+    </style>
+</head>
+<body class="container">
+    <div id="app">
+        <h1 v-text="message"></h1>
+        <input type="submit"
+               class="form-control btn btn-primary"
+               value="Pigia Me!"
+               v-on="click: faiQualcosa">
+        <div class="alert alert-success" v-show="visible">
+            <h3>Hai mostrato il messaggio</h3>
+        </div>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.1/vue.min.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+
+            data: {
+                message: 'vue è pratico!',
+                visible: false
+            },
+
+            methods: {
+                faiQualcosa: function() {
+                    this.visible = ! this.visible;
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>
